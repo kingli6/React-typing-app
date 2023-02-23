@@ -37,7 +37,28 @@ setCountDown((prevCountdown) => prevCountdown - 1);
 
 ### creating space with <span> tag
 
+    //version 2     //timesptamp 24:00?
+    <div className="content">
+        {words.map((word, i) => (
+        <>
+            <span key={i}>
+                {word.split("").map((char, idx) => (
+                    <span key={idx}>{char}</span>
+                ))}
+            </span>
+            <span> </span>
+        </>
+        ))}
+    </div>
+
+    //version 1
     <span> </span> 12:49 time stamp
+    {words.map((word, i) => (
+        <>
+            <span>{word}</span>
+            <span> </span>
+        </>
+    ))}
 
 # links
 

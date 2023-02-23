@@ -24,6 +24,11 @@ function App() {
       });
     }, 1000);
   }
+
+  function handleKeyDown(event) {
+    console.log(event.key);
+  }
+
   return (
     <div className="App">
       {/* {JSON.stringify(words)} */}
@@ -33,7 +38,7 @@ function App() {
         </div>
       </div>
       <div className="conrtol is-expanded section">
-        <input type="text" className="input" />
+        <input type="text" className="input" onKeyDown={handleKeyDown} />
       </div>
       <div className="section">
         <button className="button is-info is-fullwidth" onClick={start}>
@@ -45,10 +50,14 @@ function App() {
           <div className="card-content">
             <div className="content">
               {words.map((word, i) => (
-                <>
-                  <span>{word}</span>
+                <span key={i}>
+                  <span>
+                    {word.split("").map((char, idx) => (
+                      <span key={idx}>{char}</span>
+                    ))}
+                  </span>
                   <span> </span>
-                </>
+                </span>
               ))}
             </div>
           </div>
