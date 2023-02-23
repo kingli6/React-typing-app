@@ -1,12 +1,49 @@
+# Function to learn or gotcha functions
+
+### setInterval(), clearInterval()
+
+    //javascript function
+    function start() {
+    let interval = setInterval(() => {
+      setCountDown((prevCountdown) => {
+        if (prevCountdown === 0) clearInterval(interval);
+        else return prevCountdown - 1;
+      });
+    }, 1000);
+
+}
+
+### creating a new array, fill? map (goes through each item and adds words... )
+
+    //why does fill have null?    //T. Num_of_words is 200. Fill fills it with null value?
+    function generateWords() {
+        return new Array(Num_of_words).fill(null).map(() => randomWords());
+    }
+
+### this won't work cause in Javascript, due to closure? or scope? it's not aware of the current state timestamp 18:00
+
+    function Start() {
+        setInterval(() => {
+            setCountDown(countDown -1)      //WONT WORK
+        }, 1000)
+    }
+
+But if you add a call back function, react will prioritize it.
+setCountDown((prevCountdown) => prevCountdown - 1);
 
 ### Firefox short keys
-    ctrl + tab and ctrl + shift + tab to switch between tabs
-### creating space with <span> tag
-    <span> </span> 12:49 time stamp
-# links
-### https://www.youtube.com/watch?v=t4W7PN4js-8     //tutorial link
-### https://bulma.io/documentation/overview/start/  //got css that doesn't have javascript like bootstrap
 
+    ctrl + tab and ctrl + shift + tab to switch between tabs
+
+### creating space with <span> tag
+
+    <span> </span> 12:49 time stamp
+
+# links
+
+### https://www.youtube.com/watch?v=t4W7PN4js-8 //tutorial link
+
+### https://bulma.io/documentation/overview/start/ //got css that doesn't have javascript like bootstrap
 
 # Getting Started with Create React App
 
