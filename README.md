@@ -1,20 +1,35 @@
 # Function to learn or gotcha functions
 
+### use of css, structuring...
+
+    <div className="section">
+        <div className="columns">
+          <div className="column has-text-centered">
+            <p className="is-size-5">Words per minute:</p>
+            <p className="has-text-primary is-size-l">{32}</p>
+          </div>
+          <div className="column has-text-centered">
+            <div className="is-size-5">Accuracy :</div>
+            <p className="has-text-info is-size-1">"100 %"</p>
+          </div>
+        </div>
+      </div>
+
 ### function that checks user input, uses space to...
 
     checkMatch() checks word with currentInput
 
     {keyCode} is deconstructed from (e.target.value)
 
-function handleKeyDown({ keyCode }) {
-//keyCode, we are deconstructing the event 28:55?
-//space bar
-if (keyCode === 32) {
-checkMatch();
-setCurrentInput(""); //clears the input field when pressed space
-setCurrWordIndex(currWordIndex + 1);
-}
-}
+    function handleKeyDown({ keyCode }) {
+    //keyCode, we are deconstructing the event 28:55?
+    //space bar
+        if (keyCode === 32) {
+            checkMatch();
+            setCurrentInput(""); //clears the input field when pressed space
+            setCurrWordIndex(currWordIndex + 1);
+        }
+    }
 
 function checkMatch() {
 const wordToCompare = words[currWordIndex];

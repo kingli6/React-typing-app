@@ -82,7 +82,20 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+      <div className="section">
+        <div className="columns">
+          <div className="column has-text-centered">
+            <p className="is-size-5">Words per minute:</p>
+            <p className="has-text-primary is-size-l">{32}</p>
+          </div>
+          <div className="column has-text-centered">
+            <div className="is-size-5">Accuracy :</div>
+            <p className="has-text-info is-size-1">"100 %"</p>
+          </div>
+        </div>
+      </div>
+      {/* //Last div */}
+    </div> //Last div
   );
 }
 
