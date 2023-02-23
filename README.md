@@ -1,5 +1,27 @@
 # Function to learn or gotcha functions
 
+### function that checks user input, uses space to...
+
+    checkMatch() checks word with currentInput
+
+    {keyCode} is deconstructed from (e.target.value)
+
+function handleKeyDown({ keyCode }) {
+//keyCode, we are deconstructing the event 28:55?
+//space bar
+if (keyCode === 32) {
+checkMatch();
+setCurrentInput(""); //clears the input field when pressed space
+setCurrWordIndex(currWordIndex + 1);
+}
+}
+
+function checkMatch() {
+const wordToCompare = words[currWordIndex];
+const doesItMatch = wordToCompare === currentInput.trim(); //true or false
+console.log({ doesItMatch });
+}
+
 ### input listner. Q. Are we setting value so it can be used somewhere else? Q. Isn't value what comes out of this?
 
     Q.we are using onChange to catpture the input or target.value timestamp 26:00?
