@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import randomWords from "random-words";
 
 const NUM_OF_WORDS = 200;
-const SECONDS = 60;
+const SECONDS = 20;
 
 function App() {
   const [words, setWords] = useState([]);
@@ -12,11 +12,17 @@ function App() {
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
   const [status, setStatus] = useState("waiting");
+  const textInput = useRef(null); //42:00?
 
   useEffect(() => {
     setWords(generateWords());
   }, []);
 
+  useEffect(() => {
+    if (status === "started") {
+      textInput.current.focus();
+    }
+  }, [status]);
   function generateWords() {
     return new Array(NUM_OF_WORDS).fill(null).map(() => randomWords());
   }
@@ -73,6 +79,7 @@ function App() {
       </div>
       <div className="conrtol is-expanded section">
         <input
+          ref={textInput}
           disabled={status !== "started"}
           type="text"
           className="input"
