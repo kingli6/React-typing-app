@@ -9,6 +9,8 @@ function App() {
   const [countDown, setCountDown] = useState(SECONDS);
   const [currentInput, setCurrentInput] = useState("");
   const [currWordIndex, setCurrWordIndex] = useState(0);
+  const [currCharIndex, setCurrCharIndex] = useState(-1);
+  const [currChar, setCurrChar] = useState("");
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
   const [status, setStatus] = useState("waiting");
@@ -56,6 +58,9 @@ function App() {
       checkMatch();
       setCurrentInput(""); //clears the input field when pressed space
       setCurrWordIndex(currWordIndex + 1);
+      setCurrCharIndex(-1);
+    } else {
+      //CONTINUE https://www.youtube.com/watch?v=t4W7PN4js-8
     }
   }
 
