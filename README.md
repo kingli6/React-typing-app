@@ -1,5 +1,17 @@
 # Function to learn or gotcha functions
 
+### input listner. Q. Are we setting value so it can be used somewhere else? Q. Isn't value what comes out of this?
+
+    Q.we are using onChange to catpture the input or target.value timestamp 26:00?
+
+<input
+type="text"
+className="input"
+onKeyDown={handleKeyDown}
+value={currentInput}
+onChange={(e) => setCurrentInput(e.target.value)}
+/>
+
 ### setInterval(), clearInterval()
 
     //javascript function

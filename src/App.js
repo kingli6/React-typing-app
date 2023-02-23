@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import randomWords from "random-words";
 
 const Num_of_words = 200;
-const Seconds = 5;
+const Seconds = 60;
 
 function App() {
   const [words, setWords] = useState([]);
   const [countDown, setCountDown] = useState(Seconds);
+  const [currentInput, setCurrentInput] = useState("");
+  const [currWordIndex, setCurrWordIndex] = useState(0);
 
   useEffect(() => {
     setWords(generateWords());
@@ -25,10 +27,21 @@ function App() {
     }, 1000);
   }
 
-  function handleKeyDown(event) {
-    console.log(event.key);
+  function handleKeyDown({ keyCode }) {
+    //keyCode, we are deconstructing the event 28:55?
+    //space bar
+    if (keyCode === 32) {
+      checkMatch();
+      setCurrentInput(""); //clears the input field when pressed space
+      setCurrWordIndex(currWordIndex + 1);
+    }
   }
 
+  function checkMatch() {
+    const wordToCompare = words[currWordIndex];
+    const doesItMatch = wordToCompare === currentInput.trim(); //true or false
+    console.log({ doesItMatch });
+  }
   return (
     <div className="App">
       {/* {JSON.stringify(words)} */}
@@ -38,7 +51,13 @@ function App() {
         </div>
       </div>
       <div className="conrtol is-expanded section">
-        <input type="text" className="input" onKeyDown={handleKeyDown} />
+        <input
+          type="text"
+          className="input"
+          onKeyDown={handleKeyDown}
+          value={currentInput}
+          onChange={(e) => setCurrentInput(e.target.value)}
+        />
       </div>
       <div className="section">
         <button className="button is-info is-fullwidth" onClick={start}>
