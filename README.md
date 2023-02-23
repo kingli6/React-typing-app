@@ -1,3 +1,13 @@
+
+### Firefox short keys
+    ctrl + tab and ctrl + shift + tab to switch between tabs
+### creating space with <span> tag
+    <span> </span> 12:49 time stamp
+# links
+### https://www.youtube.com/watch?v=t4W7PN4js-8     //tutorial link
+### https://bulma.io/documentation/overview/start/  //got css that doesn't have javascript like bootstrap
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
